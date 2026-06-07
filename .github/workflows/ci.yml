@@ -28,6 +28,9 @@ jobs:
       - name: Ruff lint
         run: ruff check .
 
+      - name: Train model
+        run: python -m app.ml.train
+
       - name: Pytest with coverage
         run: pytest --cov=app/models --cov=app/ml --cov-fail-under=80
 
